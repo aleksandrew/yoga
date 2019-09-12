@@ -1,0 +1,87 @@
+@import "../vars";
+
+.header {
+	height: 100px;
+}
+
+.container--header {
+	padding: 0 140px;
+}
+
+.navigation {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 0;
+	
+	&__list {
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
+.logo {
+	text-align: center;
+
+	&__caption {
+		font-size: 2.4rem;
+		text-transform: uppercase;
+		color: $lightBlue;
+		font-family: Open Sans regular, sans-serif;
+	}
+}
+
+.menu-item {
+	margin-right: 30px;
+	// line-height: 50px;
+	
+	&__link {
+		font-family: Open Sans semiBold, sans-serif;
+		font-weight: 700;
+		font-size: 1.4rem;
+		color: $grey;
+		transition: all .5s linear;
+
+		&::after {  
+			content: "";
+			display: block;
+			width: 0; 
+			height: 1px;
+			background: $grey;
+			margin: auto;
+			transition: width .3s linear;
+		}
+
+		
+	
+		&:hover {
+			color: $lightBlue;
+		transition: all .3s linear;
+			
+		}
+	
+		&:hover::after {
+			width: 70%; 
+			background: $lightBlue;
+		} 
+		
+		&--active {
+			color: $lightBlue; 	
+
+			&::after {  
+				content: "";
+				display: block;
+				width: 70%; 
+				height: 1px;
+				background: $lightBlue;
+				margin: auto;
+				transition: width .3s linear;
+			}			
+		}
+	}
+
+	
+	&:last-child {
+		margin-right: 0;
+	}
+}
