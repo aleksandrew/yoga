@@ -41,6 +41,8 @@ body {
   height: 100%;
   margin: 0;
 	padding: 0;
+
+	color: $darkGrey;
 	
 	background-color: $white;
 
@@ -116,4 +118,12 @@ ul {
 	&:focus {
 		outline: none;
 	}
+}
+
+.title {
+	font-size: 3rem;
+	line-height: 1.5;
+	color: $lightBlue;
+	font-weight: bold;
+	letter-spacing: 1px;
 }
