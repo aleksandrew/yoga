@@ -44,7 +44,7 @@ body {
 	
 	background-color: $white;
 
-  font-family: $default-font;
+  font-family: $default-font, sans-serif;
   line-height: 1.5;
 
   input:focus:required:invalid,
@@ -95,10 +95,25 @@ ul {
 	-webkit-appearance: none;
 }
 
-// .btn {
-// 	font-size: 1.3rem;
-// 	text-transform: uppercase;
-// 	padding: 15px 100px; 
-// 	border-radius: 3px;
-// 	transition: all .5s ease;
-// }
+.btn {
+	line-height: 50px;
+	font-size: 1.6rem;
+	font-weight: bold;
+	color: $white;
+	text-transform: unset;
+	cursor: pointer;
+	background-color: $lightBlue;
+	padding: 0 60px;  
+	border: none;
+	border-radius: 10px;
+	box-shadow: 5px 5px 3px 0 rgba($black, .15 );  
+	transition: all .5s ease;
+	
+	&:hover {
+		box-shadow: none;  
+	}
+	
+	&:focus {
+		outline: none;
+	}
+}
