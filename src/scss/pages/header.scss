@@ -22,6 +22,39 @@
 	}
 }
 
+.logo {
+	text-align: center;
+
+	&__caption {
+		font-size: 2.4rem;
+		text-transform: uppercase;
+		color: $lightBlue;
+		font-family: Open Sans regular, sans-serif;
+	}
+
+	&--mobile { 
+		display: block;
+		width: 80px;
+		height: 80px;
+		
+		@media screen and (min-width: 992px) {
+			display: none; 
+		}
+	}
+
+	&--nav { 
+		display: none; 
+		text-align: center;
+		
+		@media screen and (min-width: 992px) {
+			display: flex; 
+			order: 2; 
+		}
+	}
+}
+
+// nav
+
 .nav {
 	position: fixed;
 	background-color: rgba($white, .8);
@@ -80,37 +113,6 @@
 	}
 }
 
-.logo {
-	text-align: center;
-
-	&__caption {
-		font-size: 2.4rem;
-		text-transform: uppercase;
-		color: $lightBlue;
-		font-family: Open Sans regular, sans-serif;
-	}
-
-	&--mobile { 
-		display: block;
-		width: 80px;
-		height: 80px;
-		
-		@media screen and (min-width: 992px) {
-			display: none; 
-		}
-	}
-
-	&--nav { 
-		display: none; 
-		text-align: center;
-		
-		@media screen and (min-width: 992px) {
-			display: flex; 
-			order: 2; 
-		}
-	}
-}
-
 .menu-item { 
 	margin-right: 0px;
 	margin-bottom: 15px;
@@ -124,7 +126,7 @@
 		font-family: Open Sans semiBold, sans-serif;
 		font-weight: 700;
 		font-size: 3rem;
-		color: $grey; 
+		color: $darkGrey; 
 		transition: all .5s linear;
 		
 		@media screen and (min-width: 992px) {
@@ -139,7 +141,7 @@
 				display: block;
 				width: 0; 
 				height: 1px;
-				background: $grey;
+				background: $darkGrey;
 				margin: auto;
 				transition: width .3s linear;
 			}
@@ -179,6 +181,8 @@
 		margin-right: 0;
 	}
 }
+
+// hamburger-menu
 
 .hamburger {
 	z-index: 1;
