@@ -1,40 +1,69 @@
 @import '../vars';
 
 .feedback {
-  background: url(../img/background/cover.jpg) 20% 50% no-repeat;
+	background: url(../img/background/cover.jpg) 25% 50% no-repeat;
+	position: relative;
   background-size: cover;
-  min-height: 600px;
+  min-height: 80%;
   width: 100%;
   z-index: 1;
 	-webkit-appearance: none;
 
+	margin-bottom: 70px;
+
   &::before {
-    content: "";
+    content: ""; 
     display: block;
 		position: absolute;
-		min-height: 600px;
-    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 		background-color: rgba($lightBlue, .8);
 	}
 }
 
 .container--feedback {
 	display: flex;
-	justify-content: center;
-	// align-self: center;
+	flex-direction: column; 
+	justify-content: center; 
+	align-self: center;
+	
+	@media screen and (min-width: 992px) {
+		justify-content: space-around; 
+		flex-direction: row;
+	} 
+	
+	@media screen and (min-width: 1200px) {
+		justify-content: center;
+	} 
 }
 
 // feedback-form
 
 .feedback-form {
+	align-self: center;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
+	order: 2;
+	max-width: 305px;
+	height: 400px; 
 	background-color: $white;
 	border-radius: 10px;
 	padding: 30px;
-	margin: 100px 0 100px 240px;
-	z-index: 999;
+	margin: 30px 0;
+	z-index: 50;
+	box-shadow: 5px 5px 3px 0 rgba($black, .15 );  
+	
+	@media screen and (min-width: 992px) {
+		margin: 100px 0;
+		order: 1;
+	} 
+	
+	@media screen and (min-width: 1200px) {
+		margin: 100px 0 100px 20%;
+	} 
 
 	&__title {
 		font-size: 2.5rem;
@@ -80,21 +109,34 @@
 // feedback-desc
 
 .feedback-desc {
-	// max-width: 570px;
-	// min-height: 600px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: flex-start;
+	align-items: center;
+	text-align: center;
+	order: 1;
 	color: $white;
-	margin-left: 75px;
-	z-index: 999;
+	margin-top: 20px;
+	margin-left: 0px;
+	z-index: 50; 
+	
+	@media screen and (min-width: 992px) {
+		align-items: flex-start;
+		text-align: left;
+		margin-top: 0;
+		margin-left: 75px;
+		order: 2;
+	}  
 
 	&__title {
-		font-size: 4.8rem;
-		line-height: 1.5; 
+		font-size: 5rem;
+		line-height: 1.5;
+		
+		@media screen and (min-width: 992px) {
+			font-size: 4.8rem;
+		}  
 	}
-
+ 
 	&__describe {
 		font-size: 4rem;
 		font-family: Freestyle Script;
