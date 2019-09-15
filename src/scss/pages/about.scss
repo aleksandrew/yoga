@@ -1,0 +1,80 @@
+@import '../vars';
+
+.about {
+	margin-bottom: 100px;
+}
+
+.container--about {
+	position: relative;
+	padding: 0 10px;
+}
+
+.about-title {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding-left: 10px;
+}
+
+.about-info {
+	&__quote {
+		display: none;
+		justify-content: space-between;
+		
+		&--visible {
+			display: flex;
+		}
+	}
+}
+
+.about-quote {
+	font-size: 1.4rem;
+	text-align: left;
+	margin: 0;
+	margin-right: 30px;
+	max-width: 570px;
+	padding-top: 75px;
+	padding-right: 100px;
+}
+
+.about-img-block {
+	position: relative;
+	
+	&__img {
+		box-shadow: 0 0 10px 5px rgba($black, .1 );  
+		border-radius: 10px;
+		max-width: 570px;
+		height: 300px; 
+
+	}
+} 
+
+.arrow {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	border: none;
+	top: 40%;
+	cursor: pointer;
+	// z-index: 10;
+	
+	&:focus {
+		outline: none;
+	}
+	
+	&--left {
+		background: url(../img/icon/arrow.svg) 50% no-repeat; 
+		background-color: $white;
+		box-shadow: -5px -5px -5px 0 rgba($black, .15 );  
+		transform: rotate(180deg);
+		left: -15px;
+	}
+	
+	&--right {
+		background: url(../img/icon/arrow.svg) 50% no-repeat; 
+		background-color: $white;
+		box-shadow: 5px 5px 5px 0 rgba($black, .15 );  
+		right: -15px;
+	}
+}
