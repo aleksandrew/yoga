@@ -1,34 +1,33 @@
 import $ from 'jquery';
 
 export default $(() => {
-	const quote = $(".about-info__quote");
-	const arrowLeft = $("#arrowLeft");
-	const arrowRight = $("#arrowRight");
+	const aboutInfo = $(".about-info");
+	const elements = $(".about-info__quote");
 
-	// console.log(arrowLeft)
-	// console.log(arrowRight)
-
-	arrowRight.on('click', function() {
-		const currentSlide = $('.about-info__quote--visible');
+	aboutInfo.on('click', function(e) {
+		const currentButton = $(e.target);
+		const currentSlide = currentButton.closest('.about-info__quote--visible');
 		const nextSlide = currentSlide.next();
-		
-		// console.log(nextSlide[0]);
-		
-		if ( nextSlide[0] ) {	
-			currentSlide.removeClass('about-info__quote--visible');
-			nextSlide.addClass('about-info__quote--visible');
-		}
-	})
-
-	arrowLeft.on('click', function() {
-		const currentSlide = $('.about-info__quote--visible');
 		const prevSlide = currentSlide.prev();
 		
-		// console.log(nextSlide[0]);
+		if ( currentButton.is('#arrowRight')) {
+			if ( nextSlide[0] ) {	
+				currentSlide.removeClass('about-info__quote--visible');
+				nextSlide.addClass('about-info__quote--visible');
+			} else {
+				currentSlide.removeClass('about-info__quote--visible');
+				elements[0].classList.add('about-info__quote--visible');
+			}
+		}
 		
-		if ( prevSlide[0] ) {	
-			currentSlide.removeClass('about-info__quote--visible');
-			prevSlide.addClass('about-info__quote--visible');
+		if ( currentButton.is('#arrowLeft')) {
+			if ( prevSlide[0] ) {	
+				currentSlide.removeClass('about-info__quote--visible');
+				prevSlide.addClass('about-info__quote--visible');
+			} else {
+				currentSlide.removeClass('about-info__quote--visible');
+				elements[elements.length-1].classList.add('about-info__quote--visible');
+			}
 		}
 	})
 })

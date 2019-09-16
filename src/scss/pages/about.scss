@@ -1,25 +1,45 @@
 @import '../vars';
 
 .about {
+	position: absolute;
+	padding: 0 40px;
 	margin-bottom: 100px;
-}
-
-.container--about {
-	position: relative;
-	padding: 0 10px;
+	
+	@media screen and (min-width: 1200px) {
+		padding: 0 30px;
+	}
 }
 
 .about-title {
-	position: absolute;
-	top: 0;
-	left: 0;
-	padding-left: 10px;
+	position: static;
+	text-align: center;
+	padding-left: 0px;
+	
+	@media screen and (min-width: 992px) {	
+		position: absolute;
+		top: 0;
+		left: 0;
+		text-align: left;
+		padding-left: 40px;
+	}
+	
+	@media screen and (min-width: 1200px) {
+		padding-left: 30px;
+	}
 }
 
 .about-info {
+	position: relative;
+	
 	&__quote {
 		display: none;
 		justify-content: space-between;
+		flex-direction: column;
+		align-items: center;
+		
+		@media screen and (min-width: 992px) {
+			flex-direction: row;
+		}
 		
 		&--visible {
 			display: flex;
@@ -27,37 +47,64 @@
 	}
 }
 
-.about-quote {
-	font-size: 1.4rem;
-	text-align: left;
-	margin: 0;
-	margin-right: 30px;
-	max-width: 570px;
-	padding-top: 75px;
-	padding-right: 100px;
+.about-quote {	
+	font-size: 1.6rem;
+	text-align: center;
+	margin: 65px 0 30px;
+	max-width: 100%;
+
+	@media screen and (min-width: 992px) {
+		font-size: 1.4rem;
+		text-align: left;
+		margin: 75px 130px 0 0;
+		max-width: 570px;		
+	}
 }
 
 .about-img-block {
 	position: relative;
-	
+
 	&__img {
 		box-shadow: 0 0 10px 5px rgba($black, .1 );  
 		border-radius: 10px;
-		max-width: 570px;
-		height: 300px; 
-
+		max-width: 230px;
+		height: auto;  
+		
+		@media screen and (min-width: 480px) {
+			max-width: 550px;
+		}
+			
+		@media screen and (min-width: 1200px) {
+			height: 300px; 
+		}
 	}
-} 
+}  
 
 .arrow {
 	position: absolute;
-	width: 50px;
-	height: 50px;
-	border-radius: 50%;
+	width: 30px;
+	min-height: 120px;
+	border-radius: 50px;
 	border: none;
-	top: 40%;
+	top: 10%; 
 	cursor: pointer;
-	// z-index: 10;
+	z-index: 5; 
+		
+	@media screen and (min-width: 480px) {
+		top: 25%;
+		width: 50px;
+		min-height: 140px;
+	}
+	
+	@media screen and (min-width: 768px) {
+		min-height: 180px;
+	} 
+	
+	@media screen and (min-width: 992px) {
+		min-height: 50px;
+		border-radius: 50%;
+		top: 40%;
+	}
 	
 	&:focus {
 		outline: none;
@@ -66,9 +113,13 @@
 	&--left {
 		background: url(../img/icon/arrow.svg) 50% no-repeat; 
 		background-color: $white;
-		box-shadow: -5px -5px -5px 0 rgba($black, .15 );  
+		box-shadow: -5px -5px 5px 0 rgba($black, .15 );  
 		transform: rotate(180deg);
 		left: -15px;
+		
+		@media screen and (min-width: 480px) {
+			left: -25px;
+		}
 	}
 	
 	&--right {
@@ -76,5 +127,9 @@
 		background-color: $white;
 		box-shadow: 5px 5px 5px 0 rgba($black, .15 );  
 		right: -15px;
+		
+		@media screen and (min-width: 480px) {
+			right: -25px;
+		}
 	}
 }
