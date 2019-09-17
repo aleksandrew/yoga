@@ -1,44 +1,367 @@
 @import '../vars';
 
 .checkout {
-	background: url(../img/background-3/cover.jpg) 25% 50% no-repeat;
+	background: url(../img/background/cover_3.png) 50% 90% no-repeat;
 	position: relative;
   background-size: cover;
-  height: 1150px;
+  height: 1150px; 
   width: 100%;
   z-index: 1;
 	-webkit-appearance: none;
 
-	margin-bottom: 70px;
+	border-top: 120px solid transparent;
+	margin-top: -100px;
+	background-clip: padding-box;
 
-  // &::before {
-  //   content: ""; 
-  //   display: block;
-	// 	position: absolute;
-  //   top: 0;
-  //   bottom: 0;
-  //   left: 0;
-  //   right: 0;
-	// 	background-color: rgba($lightBlue, .8);
-	// }
+	// margin-bottom: 70px;
+
+  &::before {
+    content: ""; 
+    display: block;
+		position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+		background-color: rgba($lightBlue, .15);
+	}
 }
 
-.order-form {
-	align-self: center;
+.order {
 	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	order: 2;
-	max-width: 370px;
-	height: 490px; 
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-bottom: 100px;
+
+	&__form {
+		align-self: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 370px;
+		height: 490px;  
+		background-color: $white;
+		border-radius: 10px;
+		margin: 30px 0;
+		z-index: 50;
+		box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);  
+	}
+}
+
+.price {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px 10px 0 0;
+	width: 100%;
+	margin-bottom: 25px;
+	background-color: $blue;
+	color: $white;
+	
+	&__count {
+		padding-left: 30px;
+		margin-left: -80px;
+		line-height: 150px;
+		font-size: 6.7rem;
+		color: $white;
+		position: relative;
+		transition: all .5s ease ;
+		
+		&::before {
+			content: "$";
+			font-size: 3.2rem;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+		
+		&::after {
+			content: "/ month";
+			position: absolute;
+			font-size: 1.8rem;
+			text-transform: uppercase;
+			font-weight: bold;
+			bottom: -20px;
+			right: -90px;
+		}
+	}
+}
+
+.describe {
+	font-size: 1.8rem;
+	line-height: 50px;
+	text-transform: uppercase;
+	margin-bottom: 25px;
+	text-align: center;
+
+	&::after {
+		content: '';
+		display: block;
+		width: 50%;
+		height: 1px;
+		background-color: $grey;
+		margin: auto;
+	}
+
+	&--last-child {
+		&::after {
+			display: none;
+		}
+	}
+}
+
+.btn--order-form {
+	border-radius: 20px;
+	box-shadow: none;
+	transition: all .5s ease ;
+}
+
+.checkout--hover {
+	color: rgb(165, 10, 10);
+	transition: all .5s ease ;
+}
+
+// slider
+
+.slider {
+  margin: 0 auto;
+	max-width: 1170px;
+	box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1); 
 	background-color: $white;
 	border-radius: 10px;
-	padding: 30px;
-	margin: 30px 0;
-	z-index: 50;
-	box-shadow: 5px 5px 3px 0 rgba($black, .15 );  
 }
 
-// .price {
+.slide_viewer {
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+}
+
+.slide_group {
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.slide {
+  display: none;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+	// display: flex;
+	justify-content: space-around;
+	align-items: center; 
+
+	&__photo {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		max-width: 275px; 
+		margin-right: 70px;
+		position: relative;
+
+		&::after {
+			content: "";
+			position: absolute;
+			width: 150px;
+			height: 150px;
+			top: -10px;
+			left: -10px;
+			border-radius: 50%;
+			background-color: transparent;
+			border: 2px solid rgba($grey, .5);
+		} 
+	}
+
+	&__desc {
+		display: flex;
+		flex-direction: column;
+		max-width: 675px;
+		position: relative;
+
+		&::before {
+			content: '"';
+			position: absolute;
+			font-size: 6rem;
+			color: $lightBlue;
+			transform: rotate(180deg);
+			font-style: italic;
+			left: -50px;
+			top: -60px;
+		}
+
+		&::after {
+			content: '"';
+			position: absolute;
+			font-size: 6rem;
+			color: $lightBlue;
+			font-style: italic;
+			bottom: 0px;
+			right: -30px;
+		}
+	}
+}
+
+.trainer {
+	&-photo {
+		width: 130px;
+		height: 130px;
+		border-radius: 50%;
+	}
+
+	&-desc {
+		font-size: 1.4rem;
+		font-style: italic;
+		margin-bottom: 30px;
+	}
+
+	&-position {
+		font-size: 1.4rem;
+		position: relative;
+
+		&::before {
+			content: "";
+			position: absolute;
+			width: 2px;
+			height: 80px;
+			top: -40px;
+			left: -40px;
+			background-color: rgba($grey, .5);
+		} 
+	}
+
+	&-name {
+		font-size: 1.5rem;
+		text-transform: capitalize;
+		color: $lightBlue;
+	}
+}
+
+.slide_buttons {
+	position: absolute;
+	bottom: 220px;
+  left: 1240px;
+	text-align: center;
+	width: auto;
+	height: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.slide_btn {
+	display: block;
+	width: 21px;
+	height: 21px;
+	border: 2px solid $grey;
+	border-radius: 50%;
+	margin-bottom: 10px;
+	background-color: transparent;
+  cursor: pointer;
+}
+
+.slide_btn.active, .slide_btn:hover {
+	display: block;
+	background-color: $blue;
+	margin-bottom: 10px;
+	cursor: pointer;
+	position: relative;
+	border: 1px solid $blue;
 	
-// }
+	&::before {
+		content: '';
+		position: relative;
+		top: 2px;
+		left: 2px;
+		display: block;
+		width: 15px;
+		height: 15px;
+		border-radius: 50%;
+		border: 2px solid $white;
+		background-color: transparent;
+
+
+	}
+}
+
+.directional_nav {
+  height: 340px;
+  margin: 0 auto;
+  max-width: 940px;
+  position: relative;
+	top: -340px;
+	
+	&__next {
+		position: absolute;
+		display: flex;
+		bottom: -36px;
+		left: 40%;
+	}
+}
+
+.next {
+	&-photo {
+		&--trainer-photo {
+			border-radius: 50%;
+			width: 70px;
+			height: 70px;
+			margin-right: 5px;
+			border: 2px solid rgba($grey, .5);
+		}
+	}
+
+	&-desc {
+		display: flex;
+		align-items: flex-start;
+		justify-content: center;
+		flex-direction: column;
+
+			&__name {
+			font-size: 1.4rem;
+			margin-bottom: 5px; 
+			color: $grey;
+			text-transform: capitalize;
+		}
+
+		&__position {
+			font-size: 1rem;
+		}
+	}
+}
+
+#previousBtn {
+	margin: auto;
+  position: absolute;
+  bottom: -200px;
+  left: 270px;
+}
+
+#nextBtn {
+  bottom: 0;
+  margin: auto;
+  position: absolute;
+  right: 310px;
+	bottom: -200px;
+}
+// 
+#previousBtn, #nextBtn {
+  cursor: pointer;
+  height: 65px;
+  opacity: 1;
+  transition: opacity 0.4s ease-in-out;
+  width: 65px;
+}
+
+#previousBtn:hover, #nextBtn:hover {
+  opacity: .5;
+}
+
+@media only screen and (max-width: 767px) {
+  .previous_btn {
+    left: 50px;
+  }
+  .next_btn {
+    right: 50px;
+  }
+}
