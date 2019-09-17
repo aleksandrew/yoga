@@ -7,6 +7,10 @@
 	align-items: center;
 	margin-bottom: 50px;
 	
+	border-top: 120px solid transparent;
+	margin-top: -100px;
+	background-clip: padding-box;
+	
 	&__desc {
 		font-family: Freestyle Script;
 		font-size: 4rem;

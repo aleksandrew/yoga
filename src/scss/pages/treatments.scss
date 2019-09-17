@@ -11,6 +11,10 @@
 	margin-bottom: 100px;
   z-index: 0;
 	-webkit-appearance: none;
+	
+	border-top: 120px solid transparent;
+	margin-top: -100px;
+	background-clip: padding-box;
 
 
   &::before {
