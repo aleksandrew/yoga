@@ -4,12 +4,17 @@
 	background: url(../img/background/cover.jpg) 25% 50% no-repeat;
 	position: relative;
   background-size: cover;
-  min-height: 80%;
+	min-height: 80%;
   width: 100%;
   z-index: 1;
 	-webkit-appearance: none;
+	
+	border-top: 120px solid transparent;
+	margin-top: -100px;
+	background-clip: padding-box;
 
-	margin-bottom: 70px;
+	padding-top: 20px;
+	margin-bottom: 70px; 
 
   &::before {
     content: ""; 

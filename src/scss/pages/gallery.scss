@@ -1,6 +1,10 @@
 @import '../vars';
 
 .gallery {
+	border-top: 120px solid transparent;
+	margin-top: -100px;
+	background-clip: padding-box;
+
 	margin-bottom: 100px;
 }
 

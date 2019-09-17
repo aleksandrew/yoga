@@ -1,0 +1,44 @@
+@import '../vars';
+
+.checkout {
+	background: url(../img/background-3/cover.jpg) 25% 50% no-repeat;
+	position: relative;
+  background-size: cover;
+  height: 1150px;
+  width: 100%;
+  z-index: 1;
+	-webkit-appearance: none;
+
+	margin-bottom: 70px;
+
+  // &::before {
+  //   content: ""; 
+  //   display: block;
+	// 	position: absolute;
+  //   top: 0;
+  //   bottom: 0;
+  //   left: 0;
+  //   right: 0;
+	// 	background-color: rgba($lightBlue, .8);
+	// }
+}
+
+.order-form {
+	align-self: center;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	order: 2;
+	max-width: 370px;
+	height: 490px; 
+	background-color: $white;
+	border-radius: 10px;
+	padding: 30px;
+	margin: 30px 0;
+	z-index: 50;
+	box-shadow: 5px 5px 3px 0 rgba($black, .15 );  
+}
+
+// .price {
+	
+// }
