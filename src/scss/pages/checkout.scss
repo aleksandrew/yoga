@@ -1,6 +1,7 @@
 @import '../vars';
 
 .checkout {
+  flex: 1 0 auto;
 	background: none;
 	position: relative;
   background-size: cover;
@@ -239,6 +240,10 @@
 			border-radius: 50%;
 			background-color: transparent;
 			border: 2px solid rgba($grey, .5);
+			
+			@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+				left: 62px;
+			}
 		} 
 	}
 

@@ -7,6 +7,11 @@
 	width: 100vw;
 	z-index: 1000;
 	background-color: $white; 
+	
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+		position: fixed;
+		top: 0;
+	}
 } 
 
 .container--header {

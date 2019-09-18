@@ -11,7 +11,9 @@
 .grid {
 	width: 100%;
 	display: flex;
+	display: -ms-flex;
 	flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
 	justify-content: center;
 
 	&__item {
@@ -69,6 +71,7 @@
 .is-expanded {
 	position: fixed;
 	display: flex;
+	display: -ms-flex;
 	justify-content: center;
 	align-items: center;
 	width: 100%;
@@ -93,6 +96,10 @@
 		width: 70%;
 		top: 30px;
 		bottom: 30px;
+	}
+	
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+		left: 15%;
 	}
 
 	&:hover {
