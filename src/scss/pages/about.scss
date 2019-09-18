@@ -85,31 +85,28 @@
 	}
 }  
 
-.arrow {
-	position: absolute;
-	width: 30px;
-	min-height: 120px;
-	border-radius: 50px;
-	border: none;
-	top: 10%; 
-	cursor: pointer;
-	z-index: 5; 
-		
+#arrowLeft, #arrowRight {
+	top: 40px;
+	right: -15px;
+	
 	@media screen and (min-width: 480px) {
-		top: 25%;
-		width: 50px;
-		min-height: 140px;
+		top: 50%;
 	}
 	
-	@media screen and (min-width: 768px) {
-		min-height: 180px;
-	} 
-	
-	@media screen and (min-width: 992px) {
-		min-height: 50px;
-		border-radius: 50%;
+	@media screen and (min-width: 776px) {
 		top: 40%;
 	}
+}
+
+.arrow {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	min-height: 50px;
+	border: none;
+	border-radius: 50%;
+	cursor: pointer; 
+	z-index: 5; 
 	
 	&:focus {
 		outline: none;
@@ -138,3 +135,6 @@
 		}
 	}
 }
+
+
+ 
