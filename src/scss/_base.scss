@@ -95,6 +95,8 @@ ul {
 
 .input {
 	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 }
 
 .btn {
@@ -110,6 +112,9 @@ ul {
 	border-radius: 10px;
 	box-shadow: 5px 5px 3px 0 rgba($black, .15 );  
 	transition: all .5s ease;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 	
 	&:hover {
 		box-shadow: none;  

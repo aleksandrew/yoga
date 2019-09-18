@@ -1,10 +1,15 @@
 @import "../vars";
 
 .service {
+  flex: 1 0 auto;
 	display: flex;
+	display: -ms-flex;
 	flex-direction: column;
+	-ms-flex-direction: column;
 	justify-content: center;
+	-ms-justify-content: center;
 	align-items: center;
+	-ms-align-items: center;
 	margin-bottom: 50px;
 	
 	border-top: 120px solid transparent;
@@ -20,9 +25,14 @@
 	
 	&__list {
 		display: flex;
+		display: -ms-flex;
 		justify-content: center;
+		-ms-justify-content: center;
 		align-items: center;
+		-ms-align-items: center;
 		flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		width: 100%;
 	}
 }
 
@@ -30,8 +40,11 @@
 
 .yoga-cart {
 	display: flex;
+	display: -ms-flex;
 	flex-direction: column;
+	-ms-flex-direction: column;
 	align-items: center;
+	-ms-align-items: center;
 	border-radius: 15px;
 	box-shadow: 0 0 20px 5px rgba($black, .1 );
 	margin-bottom: 25px;
@@ -42,6 +55,7 @@
 		margin-right: 0px;	
 		margin-left: 0px;
 		flex-direction: row;
+		-ms-flex-direction: row;
 	}
 	
 	&:nth-child(odd) {

@@ -33,6 +33,7 @@
 	color: $white;
 
 	&--title {
+		width: 100%;
 		color: $white;
 		font-size: 1.8rem;
 		padding-bottom: 50px;
@@ -56,11 +57,13 @@
 		
 		&__desc {
 			font-size: 1.4rem;
+			width: 100%;
 			margin-bottom: 50px;
 		}
 
 		&__social {
 			display: flex;
+			width: 100%;
 		}
 	}
 }
