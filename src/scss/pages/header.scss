@@ -1,0 +1,213 @@
+@import "../vars";
+
+.header {
+	position: sticky;
+	top: 0;
+	height: 100px;
+	width: 100vw;
+	z-index: 1000;
+	background-color: $white; 
+	
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+		position: fixed;
+		top: 0;
+	}
+} 
+
+.container--header {
+	padding: 10px 15px 0;  	
+
+	@media screen and (min-width: 992px) {		
+		padding: 0 140px;
+	}
+}
+
+.header-mobile {
+	display: flex; 
+	justify-content: space-between;
+
+	@media screen and (min-width: 992px) {		
+    display: none;
+	}
+}
+
+.logo {
+	text-align: center;
+
+	&__caption {
+		font-size: 2.4rem;
+		text-transform: uppercase;
+		color: $lightBlue;
+		font-family: Open Sans regular, sans-serif;
+	}
+
+	&--mobile { 
+		display: block;
+		width: 80px;
+		height: 80px;
+		
+		@media screen and (min-width: 992px) {
+			display: none; 
+		}
+	}
+
+	&--nav { 
+		display: none; 
+		text-align: center;
+		
+		@media screen and (min-width: 992px) {
+			display: flex; 
+			flex-direction: column;
+			order: 2; 
+		}
+	}
+}
+
+// nav
+
+.nav {
+	position: fixed;
+	background-color: rgba($white, .95);
+	top: 0;
+	right: -100%;  
+	width: 0%;
+	height: 100%;  
+	z-index: 99;
+
+
+	display: flex;
+	flex-direction: column; 
+	justify-content: flex-start; 
+	align-items: flex-end; 
+	padding: 150px 20px 0 0px;
+	text-align: right;
+	transition: all .5s ease;  
+	 
+	@media screen and (min-width: 992px) {
+		position: relative;
+		background-color: rgba($white, .8);
+		top: 0; 
+		right: 0;
+		width: 100%;
+		height: 100%;
+
+		display: flex;
+		flex-direction: row; 
+		justify-content: space-between;
+		align-items: center;
+		padding: 10px 0;
+	} 
+
+	&--active {
+		width: 60%;  
+		right: 0;
+		display: flex;
+		transition: all .5s ease;  
+	}
+	
+	&__list {
+		display: flex;
+		flex-direction: column; 
+		justify-content: flex-start;
+		
+		@media screen and (min-width: 992px) {
+			justify-content: space-between;
+			flex-direction: row; 
+		} 
+
+		&--left {
+			order: 1;
+		}
+
+		&--right { 
+			order: 3;
+		}
+	}
+}
+
+.menu-item { 
+	margin-right: 0px;
+	margin-bottom: 15px;
+	
+	@media screen and (min-width: 992px) {
+		margin-right: 30px;
+		margin-bottom: 0px; 
+	}
+	
+	&__link {
+		font-family: Open Sans semiBold, sans-serif;
+		font-weight: 700;
+		font-size: 3rem;
+		color: $darkGrey; 
+		transition: all .5s linear;
+		
+		@media screen and (min-width: 992px) {
+			font-size: 1.4rem;
+		}
+
+		&::after {  
+			display: none;
+		
+			@media screen and (min-width: 992px) {
+				content: "";
+				display: block;
+				width: 0; 
+				height: 1px;
+				background: $darkGrey;
+				margin: auto;
+				transition: width .3s linear;
+			}
+		} 
+		
+	
+		&:hover {
+			color: $lightBlue;
+			transition: all .3s linear;
+		}
+	
+		&:hover::after {
+			width: 70%; 
+			background: $lightBlue;
+		} 
+		
+		&--active {
+			color: $lightBlue; 	
+
+			&::after {   
+				display: none;
+		
+				@media screen and (min-width: 992px) {
+					content: "";
+					display: block;
+					width: 70%; 
+					height: 1px;
+					background: $lightBlue;
+					margin: auto;
+					transition: width .3s linear;
+				}
+			}			
+		}
+	}
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+// hamburger-menu
+
+.hamburger {
+	z-index: 999;
+
+	&--color, &--color::after, &--color::before { 
+		background-color: $lightBlue;
+	}
+
+	&:focus {
+		outline: none; 
+	}
+} 
+
+.hamburger.is-active .hamburger-inner, .hamburger.is-active .hamburger-inner::before, .hamburger.is-active .hamburger-inner::after {
+	background-color: $lightBlue;	
+}

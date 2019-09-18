@@ -43,8 +43,7 @@ export const style = () => {
     postcssPresetEnv({
       browsers: [
         '>0.05%',
-        'not dead',
-        'not ie <= 11',
+        'not ie <= 9',
         'not op_mini all'
       ]
     }),

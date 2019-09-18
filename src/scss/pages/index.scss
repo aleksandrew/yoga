@@ -2,8 +2,13 @@
 @import "../mixins";
 @import "../fonts";
 @import "../base";
-// Your styles should be here
 
-.red {
-	background-color: red;
-}
+// Pages
+@import "./header";
+@import "./feedback";
+@import "./service";
+@import "./gallery";
+@import "./about";
+@import "./treatments";
+@import "./checkout";
+@import "./footer";
