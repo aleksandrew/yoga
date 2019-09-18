@@ -1,17 +1,22 @@
 @import '../vars';
 
 .checkout {
-	background: url(../img/background/cover_3.png) 50% 90% no-repeat;
+	background: none;
 	position: relative;
   background-size: cover;
-  height: 1150px; 
+  min-height: 1150px; 
   width: 100%;
   z-index: 1;
 	-webkit-appearance: none;
-
+	padding: 0 10px;
+	
 	border-top: 120px solid transparent;
-	margin-top: -100px;
+	margin-top: -220px;
 	background-clip: padding-box;
+	
+	@media screen and (min-width: 776px) {
+		background: url(../img/background/cover_3.png) 50% 90% no-repeat;
+	}
 
 	// margin-bottom: 70px;
 
@@ -30,21 +35,41 @@
 .order {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 100px;
 	margin-bottom: 100px;
+		
+	@media screen and (min-width: 992px) {
+		flex-direction: row;
+	}
 
 	&__form {
 		align-self: center;
 		display: flex;
 		flex-direction: column;
+		justify-content: space-around;
 		align-items: center;
-		width: 370px;
-		height: 490px;  
 		background-color: $white;
 		border-radius: 10px;
-		margin: 30px 0;
+		margin: 10px 0;
 		z-index: 50;
-		box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);  
+		width: 90%; 
+		box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
+		 
+		@media screen and (min-width: 560px) {
+			width: 70%; 
+		}
+		
+		@media screen and (min-width: 776px) {
+			margin: 30px 10px;
+			width: 50%; 
+		}
+		
+		@media screen and (min-width: 992px) {
+			width: 30%; 
+		}
 	}
 }
 
@@ -91,8 +116,12 @@
 	font-size: 1.8rem;
 	line-height: 50px;
 	text-transform: uppercase;
-	margin-bottom: 25px;
+	margin-bottom: 10px;
 	text-align: center;
+	
+	@media screen and (min-width: 776px) {
+		margin-bottom: 25px;
+	}
 
 	&::after {
 		content: '';
@@ -112,8 +141,17 @@
 
 .btn--order-form {
 	border-radius: 20px;
+	margin: 0 60px 50px;
 	box-shadow: none;
 	transition: all .5s ease ;
+	
+	@media screen and (min-width: 776px) {
+		margin: 0 40px 50px;
+	}
+	
+	@media screen and (min-width: 1200px) {
+		margin: 0 70px 50px;
+	}
 }
 
 .checkout--hover {
@@ -123,18 +161,33 @@
 
 // slider
 
+.checkout-review {
+	position: relative;
+	height: 500px;
+	margin-bottom: -20px; 
+	
+	@media screen and (min-width: 776px) {
+		margin-bottom: -40px; 
+	}
+}
+
 .slider {
-  margin: 0 auto;
-	max-width: 1170px;
+	position: relative;
+	margin: 0 auto;
+	width: 95%;
 	box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1); 
 	background-color: $white;
 	border-radius: 10px;
 }
 
 .slide_viewer {
-  height: 250px;
+  height: 380px;
   overflow: hidden;
   position: relative;
+	
+	@media screen and (min-width: 776px) {
+		height: 250px;
+	}
 }
 
 .slide_group {
@@ -147,18 +200,34 @@
   display: none;
   height: 100%;
   position: absolute;
-  width: 100%;
-	// display: flex;
+	width: 100%;
+	flex-direction: column;
 	justify-content: space-around;
 	align-items: center; 
+	
+	@media screen and (min-width: 776px) {
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: center; 
+	}
 
 	&__photo {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		max-width: 275px; 
-		margin-right: 70px;
+		max-width: 275px;
+		margin-top: 10px; 
+		margin-right: 0px;
 		position: relative;
+		
+		@media screen and (min-width: 776px) {
+			margin-top: 0px; 
+			margin-right: 10px;
+		}
+		
+		@media screen and (min-width: 1200px) {
+			margin-right: 70px;
+		}
 
 		&::after {
 			content: "";
@@ -176,8 +245,22 @@
 	&__desc {
 		display: flex;
 		flex-direction: column;
-		max-width: 675px;
-		position: relative;
+		max-width: 80%;
+		padding: 0 10px;
+		position: relative; 
+		
+		@media screen and (min-width: 480px) {
+			max-width: 345px;
+			padding: 0;
+		}
+		
+		@media screen and (min-width: 992px) {
+			max-width: 535px;
+		}
+		
+		@media screen and (min-width: 1200px) {
+			max-width: 675px;
+		}
 
 		&::before {
 			content: '"';
@@ -186,8 +269,16 @@
 			color: $lightBlue;
 			transform: rotate(180deg);
 			font-style: italic;
-			left: -50px;
+			left: -10px;
 			top: -60px;
+			
+			@media screen and (min-width: 480px) {
+				left: -30px;
+			}
+			
+			@media screen and (min-width: 776px) {
+				left: -50px;
+			}
 		}
 
 		&::after {
@@ -196,8 +287,18 @@
 			font-size: 6rem;
 			color: $lightBlue;
 			font-style: italic;
-			bottom: 0px;
-			right: -30px;
+			bottom: 10px;
+			right: -0px;
+			
+			@media screen and (min-width: 480px) {
+				bottom: 30px;
+				right: -20px;
+			}
+			
+			@media screen and (min-width: 776px) {
+				bottom: 0px;
+				right: -30px;
+			}
 		}
 	}
 }
@@ -212,21 +313,39 @@
 	&-desc {
 		font-size: 1.4rem;
 		font-style: italic;
-		margin-bottom: 30px;
+		text-align: center;
+		margin-bottom: 50px;
+			
+		@media screen and (min-width: 480px) {
+			text-align: left;
+		}
+		
+		@media screen and (min-width: 776px) {
+			margin-bottom: 30px;
+		}
 	}
 
 	&-position {
 		font-size: 1.4rem;
 		position: relative;
 
-		&::before {
-			content: "";
+		&::before { 
+			content: none;
 			position: absolute;
 			width: 2px;
-			height: 80px;
-			top: -40px;
+			height: 50px;
+			top: -10px;
 			left: -40px;
 			background-color: rgba($grey, .5);
+			
+			@media screen and (min-width: 480px) {
+				content: "";
+			}
+			
+			@media screen and (min-width: 776px) {
+				top: -40px;
+				height: 80px;
+			}
 		} 
 	}
 
@@ -237,17 +356,29 @@
 	}
 }
 
+// slide button
+
 .slide_buttons {
 	position: absolute;
-	bottom: 220px;
-  left: 1240px;
+	top: -30px;
+	right: 32%;
 	text-align: center;
 	width: auto;
 	height: auto;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-direction: column;
+	flex-direction: row;
+			
+	@media screen and (min-width: 480px) {
+		right: 40%;
+	}
+
+	@media screen and (min-width: 1200px) {
+		top: 50px;
+		right: -5px;
+		flex-direction: column;
+	}
 }
 
 .slide_btn {
@@ -256,29 +387,32 @@
 	height: 21px;
 	border: 2px solid $grey;
 	border-radius: 50%;
-	margin-bottom: 10px;
+	margin-right: 10px;
 	background-color: transparent;
   cursor: pointer;
+	
+	@media screen and (min-width: 1200px) {
+		margin-bottom: 10px;
+		margin-right: 0;
+	}
 }
 
 .slide_btn.active, .slide_btn:hover {
 	display: block;
 	background-color: $blue;
-	margin-bottom: 10px;
-	cursor: pointer;
 	position: relative;
-	border: 1px solid $blue;
+	border: 2px solid $blue;
 	
 	&::before {
 		content: '';
 		position: relative;
-		top: 2px;
-		left: 2px;
+		top: 1px;
+		left: 1px;
 		display: block;
 		width: 15px;
 		height: 15px;
 		border-radius: 50%;
-		border: 2px solid $white;
+		border: 3px solid $white;
 		background-color: transparent;
 
 
@@ -295,8 +429,13 @@
 	&__next {
 		position: absolute;
 		display: flex;
-		bottom: -36px;
-		left: 40%;
+		bottom: -65px;
+		left: 30%;
+		
+		@media screen and (min-width: 776px) {
+			bottom: -36px;
+			left: 45%;
+		}
 	}
 }
 
@@ -330,21 +469,41 @@
 	}
 }
 
+// button
+
 #previousBtn {
 	margin: auto;
   position: absolute;
-  bottom: -200px;
-  left: 270px;
+  bottom: -55px;
+  left: 5%;
+	
+	@media screen and (min-width: 480px) {
+		left: 10%;
+	}
+	
+	@media screen and (min-width: 776px) {
+		bottom: -30px;
+		left: 25%;
+	}
 }
 
 #nextBtn {
   bottom: 0;
   margin: auto;
   position: absolute;
-  right: 310px;
-	bottom: -200px;
+  right: 5%;
+	bottom: -55px;
+	
+	@media screen and (min-width: 480px) {
+		right: 10%;
+	}
+	
+	@media screen and (min-width: 776px) {
+		bottom: -30px;
+		right: 25%;
+	}
 }
-// 
+
 #previousBtn, #nextBtn {
   cursor: pointer;
   height: 65px;
