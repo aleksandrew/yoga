@@ -71,20 +71,20 @@
 .social-icon {
 	width: 25px;
 	height: 25px;
-	stroke: $white;
+	// stroke: $white;
 	margin-right: 10px;
 	transition: all .5s ease;
 
 	&:hover {
-		stroke: $grey;
+		// stroke: $grey;
 	}
 
 	&--fill {
-		fill: $white;
+		// fill: $white;
 		transition: all .5s ease;
 
 		&:hover {
-			fill: $grey;
+			// fill: $grey;
 		}
 	}
 }
