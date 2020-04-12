@@ -191,18 +191,6 @@ eval("\n\n//# sourceURL=webpack://%5Bname%5D/./src/js/pages/feedback.js?");
 
 /***/ }),
 
-/***/ "./src/js/pages/gallery.js":
-/*!*********************************!*\
-  !*** ./src/js/pages/gallery.js ***!
-  \*********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {\n  var grid = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.grid');\n  var gridItem = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.grid__item');\n  var currentItem;\n  grid.on('click', function (e) {\n    if (!currentItem || !currentItem.classList.contains('is-expanded')) {\n      currentItem = jquery__WEBPACK_IMPORTED_MODULE_0___default()(e.target)[0];\n      jquery__WEBPACK_IMPORTED_MODULE_0___default()(e.target).addClass('is-expanded');\n      grid.addClass('is-expanded--grid');\n      jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').addClass('overflow-hidden');\n    } else {\n      currentItem.classList.remove('is-expanded');\n      grid.removeClass('is-expanded--grid');\n      jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').removeClass('overflow-hidden');\n    }\n  });\n}));\n\n//# sourceURL=webpack://%5Bname%5D/./src/js/pages/gallery.js?");
-
-/***/ }),
-
 /***/ "./src/js/pages/header.js":
 /*!********************************!*\
   !*** ./src/js/pages/header.js ***!
@@ -223,7 +211,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jque
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./header */ \"./src/js/pages/header.js\");\n/* harmony import */ var _feedback__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./feedback */ \"./src/js/pages/feedback.js\");\n/* harmony import */ var _feedback__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_feedback__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _gallery__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./gallery */ \"./src/js/pages/gallery.js\");\n/* harmony import */ var _about__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./about */ \"./src/js/pages/about.js\");\n/* harmony import */ var _checkout__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./checkout */ \"./src/js/pages/checkout.js\");\n\n\n\n\n\n\n\n//# sourceURL=webpack://%5Bname%5D/./src/js/pages/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _about__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./about */ \"./src/js/pages/about.js\");\n/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./header */ \"./src/js/pages/header.js\");\n/* harmony import */ var _feedback__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./feedback */ \"./src/js/pages/feedback.js\");\n/* harmony import */ var _feedback__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_feedback__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _checkout__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./checkout */ \"./src/js/pages/checkout.js\");\n\n\n\n\n\n\n//# sourceURL=webpack://%5Bname%5D/./src/js/pages/index.js?");
 
 /***/ }),
 
